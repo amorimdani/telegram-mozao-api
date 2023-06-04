@@ -2,7 +2,10 @@
 require('dotenv').config()
 const axios = require('axios');
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
+app.use(cors);
 
 app.get('/telegram', async (req, res) => {
   const token = process.env.TELEGRAM_TOKEN;
